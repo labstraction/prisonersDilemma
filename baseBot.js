@@ -2,7 +2,15 @@ class BaseBot{
 
 
     constructor(){
-        let gameHistory = [];
+        this._points = 0;
+    }
+
+    get points(){
+        this._points;
+    }
+
+    set points(value){
+        this._points = value;
     }
 
     play(){
@@ -10,15 +18,15 @@ class BaseBot{
     }
 
     newGame(){
-        gameHistory = [];
+
     }
 
     newGeneration(){
-
+        this._points = 0;
     }
 
     memorize(number) {
-        gameHistory.push(number)
+
     }
 
 }
