@@ -2,6 +2,7 @@ class BaseBot{
 
 
     constructor(){
+        let gameHistory = [];
     }
 
     play(){
@@ -9,11 +10,15 @@ class BaseBot{
     }
 
     newGame(){
+        gameHistory = [];
+    }
+
+    newGeneration(){
 
     }
 
     memorize(number) {
-
+        gameHistory.push(number)
     }
 
 }
