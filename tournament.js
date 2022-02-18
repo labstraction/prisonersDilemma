@@ -119,7 +119,7 @@ function createFirstGeneration(params) {
         const bot7 = new TFTGoodBot();
 
 
-        players.push(bot1, bot3, bot4, bot5, bot6, bot7, bot);
+        players.push(bot1, bot3, bot4, bot5, bot6, bot7, bot, bot2);
     }
 
     shuffleArray(players);
