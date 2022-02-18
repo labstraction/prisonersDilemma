@@ -6,7 +6,7 @@ class BaseBot{
     }
 
     get points(){
-        this._points;
+        return this._points;
     }
 
     set points(value){
