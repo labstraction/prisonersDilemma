@@ -10,7 +10,7 @@ class BaseBot{
     }
 
     set points(value){
-        this._points = value;
+        this._points += value;
     }
 
     play(){
@@ -30,3 +30,6 @@ class BaseBot{
     }
 
 }
+
+
+module.exports = BaseBot;

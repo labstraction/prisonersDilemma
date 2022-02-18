@@ -1,3 +1,5 @@
+const BaseBot = require("./baseBot.js");
+
 class StrangeBot extends BaseBot{
 
     constructor(){
@@ -7,4 +9,10 @@ class StrangeBot extends BaseBot{
     newGeneration(){
         super.newGeneration();
     }
+
+    play(){
+        return 0;
+    }
 }
+
+module.exports = StrangeBot;
