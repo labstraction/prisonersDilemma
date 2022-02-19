@@ -65,6 +65,7 @@ function generateNewGeneration(players){
     let newPlayers = [];
     for (let i = 0; i < halfPlayers.length; i++) {
         const player = halfPlayers[i];
+        player.newGeneration();
         const playerClone = clonePlayer(player);
         newPlayers.push(player, playerClone);
     }
