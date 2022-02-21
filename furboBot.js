@@ -33,20 +33,17 @@ class FurboBot{
             this.selectedStrategy.selectedTime += 1;
             return this.selectedStrategy.getResponse(this.enemyHistory);
         }
-        
     }
 
 
 
     newGame(){
         for (const str of this.strategies) {
-            console.log(str.constructor.name + str.gamePoints);
+            console.log(this.set + " " + str.constructor.name + " " + str.gamePoints);
         }
         this.enemyHistory = [];
         this.set +=1;
-        for (const strategy of this.strategies) {
-            strategy.newGame()
-        }
+
     }
 
     newGeneration(){
@@ -68,7 +65,7 @@ class EvilStrategy{
     }
 
     newGame(){
-        this.gamePointss = 0;
+        this.gamePoints = 0;
     }
 
     getResponse(enemyHistory){

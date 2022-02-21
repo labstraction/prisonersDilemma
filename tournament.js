@@ -14,15 +14,14 @@ startGenerationsTournament();
 
 function startTournament(players){
 
-    for (let i = 0; i < players.length; i++) {
-        const player = players[i];
-        player.newGame()
-    }
+
 
     for (let i = 0; i < players.length; i++) {
         const firstPlayer = players[i];
         for (let j = 0; j < players.length; j++) {
             const secondPlayer = players[j];
+            firstPlayer.newGame()
+            secondPlayer.newGame();
             for (let k = 0; k < 20; k++) {
                 match(firstPlayer, secondPlayer);
             }
