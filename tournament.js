@@ -6,6 +6,7 @@ const FancyBot = require("./fancyBot")
 const BandaBassotti = require("./bandaBassotti")
 const {TFTBadBot, TFTGoodBot} = require("./tftbot")
 const reader = require("readline-sync"); 
+const FurboBot = require("./furboBot");
 
 
 startGenerationsTournament();
@@ -24,15 +25,11 @@ function startTournament(players){
             const secondPlayer = players[j];
             for (let k = 0; k < 20; k++) {
                 match(firstPlayer, secondPlayer);
-                
             }
         }
     }
 
     players.sort((p1, p2) => p2.points - p1.points);
-
-
-
     return players;
 }
 
@@ -118,9 +115,10 @@ function createFirstGeneration(params) {
         const bot5 = new BandaBassotti();
         const bot6 = new TFTBadBot();
         const bot7 = new TFTGoodBot();
+        const bot8 = new FurboBot();
 
 
-        players.push(bot1, bot3, bot4, bot5, bot6, bot7, bot, bot2);
+        players.push(bot1, bot3, bot4, bot5, bot6, bot7, bot, bot2, bot8);
     }
 
     shuffleArray(players);
