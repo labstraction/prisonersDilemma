@@ -46,7 +46,7 @@ class BotMaf extends BaseBot {
             return 1;
         }
 
-
+        return 1;
     }
 
     memorize(number) {

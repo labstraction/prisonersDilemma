@@ -33,7 +33,7 @@ class BandaBassotti extends BaseBot{
         round[1] = y;
 */
         console.log(y);
-        return y;
+        return y || 1;
     }
 
     static newGame(){

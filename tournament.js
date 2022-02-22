@@ -78,8 +78,8 @@ function clonePlayer(player){
 
 
 function match(bot1, bot2) {
-    const bot1Choose = bot1.play()
-    const bot2Choose = bot2.play()
+    const bot1Choose = bot1.play() || bot1.constructor.name;
+    const bot2Choose = bot2.play() || bot2.constructor.name;
 
     bot1.memorize(bot2Choose);
     bot2.memorize(bot1Choose);

@@ -11,8 +11,8 @@ class Camorra extends BaseBot {
 
 
     play() {
-        if (this.behaveiour === -1) {
-            return Math.floor(Math.random() * (2 - 0) + 0);
+        if (this.behaveiour > -1) {
+            return Math.floor(Math.round(Math.random()));
         } else {
             return this.behaveiour;
         }
