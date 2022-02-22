@@ -18,7 +18,6 @@ class BaseBot{
     }
 
     newGame(){
-
     }
 
     newGeneration(){

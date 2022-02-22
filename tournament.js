@@ -95,7 +95,7 @@ function calculatePoints(myChoose, enemyChoose) {
     } else if (myChoose === 1 && enemyChoose === 0) {
         return 0;
     } else if (myChoose === 0 && enemyChoose === 1) {
-        return 5;
+        return 4;
     } else {
         return 1;
     }

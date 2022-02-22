@@ -8,7 +8,7 @@ class FurboBot{
         let bad = new TFTBadStrategy();
         let good = new TFTGoodStrategy();
         let memory = new LongMemoryStrategy();
-        this.strategies = [evil, bad, good, memory];
+        this.strategies = [good];
         this.enemyHistory = [];
         this.selectedStrategy = this.strategies[0];
     }
@@ -19,13 +19,14 @@ class FurboBot{
 
     set points(value){
         this._points += value;
+        if (this.set <= this.strategies.length){
         this.selectedStrategy.gamePoints += value;
-        
+        }
     }
 
     play(){
-        if (this.set < this.strategies.length){
-            this.selectedStrategy = this.strategies[this.set];
+        if (this.set <= this.strategies.length){
+            this.selectedStrategy = this.strategies[this.set-1];
             this.selectedStrategy.selectedTime += 1;
             return this.selectedStrategy.getResponse(this.enemyHistory);
         } else {
@@ -44,11 +45,16 @@ class FurboBot{
         this.enemyHistory = [];
         this.set +=1;
 
+
     }
 
     newGeneration(){
-        this._points = 0;
+        super.newGeneration();
         this.set = 0;
+        for (const str of this.strategies) {
+          str.newGame();
+        }
+
     }
 
     memorize(number) {
@@ -87,10 +93,13 @@ class TFTGoodStrategy{
     }
 
     getResponse(enemyHistory){
+        console.log(enemyHistory)
+
         if (enemyHistory.lenght === 0) {
             return 1;
         }
         else {
+            console.log(enemyHistory);
             return enemyHistory[enemyHistory.lenght-1];
         }
     }
